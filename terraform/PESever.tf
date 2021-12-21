@@ -10,7 +10,6 @@ resource "azurerm_network_interface" "PE_int" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.PE_pip.id
   }
-
 }
 
 resource "azurerm_public_ip" "PE_pip" {
@@ -21,7 +20,7 @@ resource "azurerm_public_ip" "PE_pip" {
   allocation_method = "Dynamic"
 }
 
-resource "azurerm_linux_virtual_machine" "mainvm" {
+resource "azurerm_linux_virtual_machine" "primaryVM" {
   name                  = var.Primiary_Server_Name
   resource_group_name   = var.Resource_Group
   location              = var.Location
