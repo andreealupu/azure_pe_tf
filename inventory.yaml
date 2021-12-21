@@ -1,0 +1,21 @@
+# This is an example inventory.yaml
+# To read more about inventory files, see https://pup.pt/bolt-inventory
+version: 2
+groups: 
+  - name: primaryserver
+    targets:
+      - _plugin: terraform
+        resource_type: azurerm_linux_virtual_machine.primaryVM
+        state: terraform.tfstate
+        dir: './terraform/'
+        target_mapping:
+          uri: public_ip_address
+          name: name
+          config:
+            ssh:
+              host: public_ip_address
+              user: admin_username
+config:    
+  run-as: root
+  private-key: ~/.ssh/id_rsa
+  host-key-check: false
