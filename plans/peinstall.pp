@@ -1,5 +1,5 @@
 plan azure_pe_tf::peinstall (
-  TargetSpec $targets = get_target('primaryserver')
+  TargetSpec $targets #= get_target('primaryserver')
 ) {
   #upload the pe.conf file 
   $pe_conf_upload = upload_file('azure_pe_tf/pe.conf', '/tmp/', $targets)
