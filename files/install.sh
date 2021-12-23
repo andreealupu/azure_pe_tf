@@ -6,4 +6,3 @@ tar -xf 'puppet-enterprise-latest.tar.gz' -C puppet-enterprise-latest --strip-co
 mv /tmp/pe.conf /home/alupu/puppet-enterprise-latest/conf.d/
 sudo ./puppet-enterprise-latest/puppet-enterprise-installer -c ./puppet-enterprise-latest/conf.d/pe.conf -y
 sudo puppet infrastructure console_password --password=puppetlabs!
-sudo puppet agent -t
